@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Charting Samples</title>
+
+	<script type="text/javascript" src="jscharts.js"></script>
+	<script type="text/javascript" src="randomDwarves.js"></script>
+	<script type="text/javascript" src="coinFlip.js"></script>
+</head>
+<body>
+
+<p>It's something of a pet peeve of mine to see people look at a very small sample of something and insist that any patterns they seem to find within that set must be representative of the whole.  So, in hopes that it will help people to better visualize why small samples are such poor representations of the whole, I put together the following.</p>
+
+<div id="coinGraph">Loading graph...  If you're seeing this, it probably means something is preventing the javascript from running.</div>
+<form>
+	<label for="coinSample">Sample Size:</label>
+	<input type="number" name="coinSample" value="25">
+	<input type="button" name="coinSubmit" value="Go" onclick="redrawCoin(coinSample.value)">
+</form>
+<p> Our first graph is modeling the frequency with which one might get heads when flipping a coin (or any other event with a 50% chance of occurring).  While I can't comment too closely on what you're going to be seeing, since it's using a new set of random results each time, you'll probably notice that as the sample gets larger (seen by looking closer to the right edge of the graph), the deviation from average results tends to get smaller.  You can use the input field and button beneath the chart to have it redraw with a different final sample size. </p>
+
+<div id="dwarfGraph">Loading graph...  If you're seeing this, it probably means something is preventing the javascript from running.</div>
+<form>
+	<label for="dwarfSample">Sample Size:</label>
+	<input type="number" name="dwarfSample" value="25">
+	<input type="button" name="dwarfSubmit" value="Go" onclick="redrawDwarf(dwarfSample.value)">
+</form>
+<p> The second graph charts several alternative possibilities, where one - and only one - of them is being randomly selected each time.  In an effort to make them slightly more interesting than just numbering them, they're named after the 7 dwarves from Snow White.  With 7 equally-likely possibilities, the average frequency for each of them should be about 14.29%, but once again, actual outcome tends to vary a fair bit, especially with smaller samplings - the last time I had it redraw the chart before writing this, Dopey didn't show up at all until the 19th attempt, Happy was getting 40% of our sample until around 22, and results for the 7 didn't start consistantly being between 10% and 20% until it had done a sample size of 250.
+</p>
+
+<script type="text/javascript">
+	initCoinChart('coinGraph');
+	initDwarfChart('dwarfGraph');
+</script>
+
+</body>
+</html>
