@@ -3,14 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<title>Charting Samples</title>
+	
+	<link rel="stylesheet" type="text/css" href="bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 
 	<script type="text/javascript" src="jscharts.js"></script>
 	<script type="text/javascript" src="randomDwarves.js"></script>
 	<script type="text/javascript" src="coinFlip.js"></script>
 </head>
 <body>
-
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12">
 <p>It's something of a pet peeve of mine to see people look at a very small sample of something and insist that any patterns they seem to find within that set must be representative of the whole.  So, in hopes that it will help people to better visualize why small samples are such poor representations of the whole, I put together the following.</p>
+
+<h1>Flipping a Coin</h1>
 
 <div id="coinGraph">Loading graph...  If you're seeing this, it probably means something is preventing the javascript from running.</div>
 <form>
@@ -33,6 +40,6 @@
 	initCoinChart('coinGraph');
 	initDwarfChart('dwarfGraph');
 </script>
-
+</div></div></div>
 </body>
 </html>
